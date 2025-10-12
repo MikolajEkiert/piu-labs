@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi o formularzach HTML</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Formularze HTML - Analiza i Uwagi</h1>
+      <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="login.html">Logowanie</a>
+        <a href="konkurs.html">Konkurs</a>
+      </nav>
+    </header>
+       <!-- tekst ponizej wygenerowany przez chatgpt -->
+    <main>
+      <article>
+        <p>
+          Formularze HTML to podstawowy mechanizm zbierania danych od
+          użytkowników w aplikacjach webowych. Mimo prostoty implementacji,
+          posiadają zarówno zalety, jak i ograniczenia, które warto poznać przed
+          ich zastosowaniem.
+        </p>
+      </article>
+
+      <section>
+        <h2>Zalety formularzy HTML</h2>
+        <ul>
+          <li>
+            <strong>Natywna walidacja</strong> - HTML5 oferuje wbudowane
+            mechanizmy walidacji bez konieczności pisania JavaScript
+          </li>
+          <li>
+            <strong>Dostępność</strong> - Domyślnie wspierają technologie
+            asystujące (screen readery, nawigacja klawiaturą)
+          </li>
+          <li>
+            <strong>Prostota implementacji</strong> - Nie wymagają dodatkowych
+            bibliotek ani frameworków
+          </li>
+          <li>
+            <strong>Wydajność</strong> - Brak obciążenia JavaScript, szybsze
+            ładowanie strony
+          </li>
+          <li>
+            <strong>Uniwersalność</strong> - Działają we wszystkich nowoczesnych
+            przeglądarkach
+          </li>
+          <li>
+            <strong>SEO-friendly</strong> - Wyszukiwarki mogą indeksować
+            zawartość formularzy
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ograniczenia formularzy HTML</h2>
+        <ul>
+          <li>
+            <strong>Ograniczona kontrola nad walidacją</strong> - Brak
+            możliwości dostosowania komunikatów błędów
+          </li>
+          <li>
+            <strong>Brak zaawansowanej logiki</strong> - Nie można implementować
+            skomplikowanych zależności między polami
+          </li>
+          <li>
+            <strong>Ograniczone możliwości stylowania</strong> - Niektóre
+            elementy są trudne do stylowania
+          </li>
+          <li>
+            <strong>Brak dynamicznych funkcji</strong> - Nie można
+            dodawać/usować pól w czasie rzeczywistym
+          </li>
+          <li>
+            <strong>Proste komunikaty błędów</strong> - Brak możliwości
+            personalizacji komunikatów walidacji
+          </li>
+          <li>
+            <strong>Ograniczona interaktywność</strong> - Brak możliwości
+            tworzenia zaawansowanych interfejsów
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kiedy warto stosować formularze HTML</h2>
+        <ul>
+          <li>
+            <strong>Proste formularze kontaktowe</strong> - Zbieranie
+            podstawowych danych kontaktowych
+          </li>
+          <li>
+            <strong>Formularze rejestracyjne</strong> - Rejestracja użytkowników
+            z podstawową walidacją
+          </li>
+          <li>
+            <strong>Ankiety i quizy</strong> - Proste formularze z pytaniami
+            wielokrotnego wyboru
+          </li>
+          <li>
+            <strong>Formularze wyszukiwania</strong> - Podstawowe pola
+            wyszukiwania
+          </li>
+          <li>
+            <strong>Prototypowanie</strong> - Szybkie tworzenie makiet
+            funkcjonalnych
+          </li>
+          <li>
+            <strong>Projekty z ograniczonymi zasobami</strong> - Gdy nie ma
+            potrzeby lub możliwości implementacji JavaScript
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kiedy NIE warto stosować formularzy HTML</h2>
+        <ul>
+          <li>
+            <strong>Zaawansowane aplikacje biznesowe</strong> - Gdy potrzebna
+            jest złożona logika biznesowa
+          </li>
+          <li>
+            <strong>Formularze z dynamiczną zawartością</strong> - Gdy pola
+            muszą się zmieniać w zależności od wyborów użytkownika
+          </li>
+          <li>
+            <strong>Zaawansowane walidacje</strong> - Gdy potrzebne są
+            niestandardowe reguły walidacji
+          </li>
+          <li>
+            <strong>Aplikacje SPA (Single Page Application)</strong> - Gdy
+            formularz jest częścią większej aplikacji
+          </li>
+          <li>
+            <strong>Formularze z uploadem plików</strong> - Gdy potrzebne są
+            zaawansowane opcje uploadu
+          </li>
+          <li>
+            <strong>Aplikacje wymagające UX/UI</strong> - Gdy potrzebne są
+            zaawansowane animacje i interakcje
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Najlepsze praktyki</h2>
+        <ul>
+          <li>
+            <strong>Używaj semantycznych elementów</strong> - &lt;fieldset&gt;,
+            &lt;legend&gt;, odpowiednie typy input
+          </li>
+          <li>
+            <strong>Prawidłowe etykiety</strong> - Zawsze używaj &lt;label&gt; z
+            atrybutem for
+          </li>
+          <li>
+            <strong>Dostępność</strong> - Dodawaj aria-label dla elementów bez
+            tekstu
+          </li>
+          <li>
+            <strong>Walidacja po stronie serwera</strong> - HTML5 walidacja to
+            tylko pierwsza linia obrony
+          </li>
+          <li>
+            <strong>Responsywność</strong> - Projektuj formularze z myślą o
+            urządzeniach mobilnych
+          </li>
+          <li>
+            <strong>Feedback dla użytkownika</strong> - Informuj o statusie
+            walidacji i przetwarzania
+          </li>
+        </ul>
+      </section>
+
+      <aside>
+        <h2>Podsumowanie</h2>
+        <p>
+          Formularze HTML są doskonałym rozwiązaniem dla prostych przypadków
+          użycia, gdzie priorytetem jest szybkość implementacji i dostępność.
+          Jednak dla zaawansowanych aplikacji, gdzie potrzebna jest większa
+          kontrola nad zachowaniem i wyglądem, warto rozważyć rozwiązania
+          hybrydowe lub całkowite przejście na JavaScript.
+        </p>
+      </aside>
+    </main>
+  </body>
+</html>
