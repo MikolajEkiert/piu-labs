@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2980b9;
+  margin-bottom: 0.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+figure {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 799px) {
+  figure img {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  figure img {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  figure img {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 1600px) {
+  figure img {
+    max-height: 400px;
+  }
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #2980b9;
+  color: white;
+  border-radius: 10px;
+}
