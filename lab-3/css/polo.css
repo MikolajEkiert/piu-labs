@@ -1,0 +1,310 @@
+:root {
+  --white: #eee;
+  --black: #000;
+  --lgray: #ddddddce;
+  --color: none;
+  --blue: #0d3e74;
+  --red: #ec2323;
+  --green: #217925;
+  --yellow: #dfac2d;
+}
+
+html {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body:has(input[value='blue']:checked) {
+  --color: var(--blue);
+}
+body:has(input[value='red']:checked) {
+  --color: var(--red);
+}
+body:has(input[value='green']:checked) {
+  --color: var(--green);
+}
+body:has(input[value='yellow']:checked) {
+  --color: var(--yellow);
+}
+
+body {
+  margin: 1rem;
+  padding: 0;
+  background-color: var(--lgray);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.image {
+  width: 500px;
+  border-radius: 10px;
+  background-color: var(--white);
+  border: 2px solid var(--color);
+}
+
+.image {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: var(--white);
+  border: 2px solid var(--color);
+  position: relative;
+}
+
+img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(8%) scale(0.98);
+  transition: opacity 360ms ease-in-out, transform 420ms ease-in-out;
+}
+
+body:has(input[value='blue']:checked) .image img.blue,
+body:has(input[value='red']:checked) .image img.red,
+body:has(input[value='green']:checked) .image img.green,
+body:has(input[value='yellow']:checked) .image img.yellow {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  z-index: 2;
+}
+
+.opis {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.deal {
+  background-color: var(--color);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.color-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.color .color-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.color-button.blue {
+  background-color: var(--blue);
+}
+.color-button.red {
+  background-color: var(--red);
+}
+.color-button.green {
+  background-color: var(--green);
+}
+.color-button.yellow {
+  background-color: var(--yellow);
+}
+
+input[type='radio']:checked + .color-button {
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--black);
+  width: calc(1.5rem - 4px);
+  height: calc(1.5rem - 4px);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.size-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2rem;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  user-select: none;
+  transition: transform 220ms ease-in-out, background-color 180ms ease,
+    color 180ms ease, box-shadow 220ms ease;
+}
+
+.size-buttons input[type='radio'] {
+  display: none;
+}
+
+.size-buttons input[type='radio']:checked + .size-button {
+  background-color: var(--color);
+  color: var(--white);
+  border: 2px solid var(--black);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+}
+
+.size-buttons input[type='radio']:checked + .size-button::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.color-button:hover,
+.size-button:hover {
+  transform: translateY(-4%) scale(1.03);
+}
+.color-button:focus,
+.size-button:focus {
+  outline: 3px solid color-mix(in srgb, var(--color) 40%, transparent);
+  outline-offset: 4px;
+}
+
+.price h1 {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.cart {
+  background-color: var(--color);
+  border: 2px solid var(--black);
+  padding: 1rem 2rem;
+  color: var(--white);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 1s ease-out, transform 1s ease-out;
+  transition: background-color 300ms ease, transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.cart:hover {
+  transform: scale(1.1);
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: min(4vw, 16px);
+}
+.container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: min(1.5vw, 0.75rem);
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: min(0.75rem, 3vw);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image {
+  width: min(480px, calc(100vw - 3.5rem));
+  height: min(480px, calc(100vw - 3.5rem));
+  border-radius: 10px;
+  background-color: var(--white);
+  border: 2px solid var(--color);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.opis {
+  width: min(86vw, 280px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: min(6vw, 1.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h1,
+.price h1 {
+  font-size: min(6vw, 1.5rem);
+  padding: min(2vw, 1rem);
+}
+
+.cart {
+  background-color: var(--color);
+  border: 2px solid var(--black);
+  padding: min(2.5vw, 0.9rem) min(5vw, 1.6rem);
+  color: var(--white);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 300ms ease, transform 220ms ease,
+    box-shadow 220ms ease;
+  width: min(56vw, 220px);
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+
+.cart:hover {
+  transform: scale(1.1);
+}
