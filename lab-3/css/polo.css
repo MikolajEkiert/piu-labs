@@ -237,6 +237,38 @@ input[type='radio']:checked + .color-button {
   transform: scale(1.1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  img {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .color-button,
+  .size-button,
+  .cart,
+  input[type='radio'] + .color-button,
+  .size-buttons input[type='radio'] + .size-button,
+  .color-button:hover,
+  .size-button:hover,
+  .cart:hover,
+  input[type='radio']:checked + .color-button,
+  .size-buttons input[type='radio']:checked + .size-button {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
 html,
 body {
   width: 100vw;
