@@ -3,10 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/kanban.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <header>
+      <h1>Lab 4</h1>
+    </header>
+
+    <main id="kanban-board" role="region" aria-label="Tablica kanban">
+      <section class="column" id="todo" aria-labelledby="todo-heading">
+        <header class="column-header">
+          <h2 id="todo-heading">Do zrobienia</h2>
+          <div class="card-count" aria-live="polite">
+            Liczba Kart: <span class="count">1</span>
+          </div>
+        </header>
+
+        <div
+          class="column-actions"
+          role="toolbar"
+          aria-label="Akcje kolumny TO DO"
+        >
+          <button class="add-card-button" aria-label="Dodaj kartę do TO DO">
+            Dodaj kartę
+          </button>
+          <button
+            class="colorize-column-button"
+            aria-label="Koloruj kolumnę TO DO"
+          >
+            Koloruj kolumnę
+          </button>
+          <button class="sort-column-button" aria-label="Sortuj kolumnę TO DO">
+            Sortuj Kolumnę
+          </button>
+        </div>
+
+        <div class="cards-container" aria-live="polite"></div>
+      </section>
+
+      <section
+        class="column"
+        id="in-progress"
+        aria-labelledby="in-progress-heading"
+      >
+        <header class="column-header">
+          <h2 id="in-progress-heading">W TRAKCIE</h2>
+          <div class="card-count" aria-live="polite">
+            Liczba Kart: <span class="count">1</span>
+          </div>
+        </header>
+
+        <div
+          class="column-actions"
+          role="toolbar"
+          aria-label="Akcje kolumny IN PROGRESS"
+        >
+          <button
+            class="add-card-button"
+            aria-label="Dodaj kartę do IN PROGRESS"
+          >
+            Dodaj kartę
+          </button>
+          <button
+            class="colorize-column-button"
+            aria-label="Koloruj kolumnę IN PROGRESS"
+          >
+            Koloruj kolumnę
+          </button>
+          <button
+            class="sort-column-button"
+            aria-label="Sortuj kolumnę IN PROGRESS"
+          >
+            Sortuj Kolumnę
+          </button>
+        </div>
+
+        <div class="cards-container" aria-live="polite"></div>
+      </section>
+
+      <section class="column" id="done" aria-labelledby="done-heading">
+        <header class="column-header">
+          <h2 id="done-heading">Zrobione</h2>
+          <div class="card-count" aria-live="polite">
+            Liczba Kart: <span class="count">1</span>
+          </div>
+        </header>
+
+        <div
+          class="column-actions"
+          role="toolbar"
+          aria-label="Akcje kolumny DONE"
+        >
+          <button class="add-card-button" aria-label="Dodaj kartę do DONE">
+            Dodaj kartę
+          </button>
+          <button
+            class="colorize-column-button"
+            aria-label="Koloruj kolumnę DONE"
+          >
+            Koloruj kolumnę
+          </button>
+          <button class="sort-column-button" aria-label="Sortuj kolumnę DONE">
+            Sortuj Kolumnę
+          </button>
+        </div>
+
+        <div class="cards-container" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="scripts/kanban.js"></script>
   </body>
 </html>
