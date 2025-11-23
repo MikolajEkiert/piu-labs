@@ -1,0 +1,66 @@
+
+body {
+  font-family: Arial;
+  text-align: center;
+  margin: 30px;
+  background-color: lightgrey;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  @media (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  @media (max-width: 799px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  margin-bottom: 12px;
+}
+
+button {
+  margin: 4px;
+  padding: 12px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.board {
+  margin: 12px auto;
+  max-width: 750px;
+  min-height: 160px;
+  border: 2px dashed black;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: inherit;
+}
+
+.shape {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  border: 3px solid black;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+}
+
+.square {
+  border-radius: 6px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.counters {
+  margin: 12px 0;
+}
