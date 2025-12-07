@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lab 6 — Ajax demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Ajax library demo</h1>
+
+      <div class="controls">
+        <button id="btn-fetch">Pobierz dane</button>
+        <button id="btn-error">Pobierz (błąd)</button>
+        <button id="btn-reset">Reset</button>
+      </div>
+
+      <div id="status">
+        <div id="loader" aria-hidden="true"></div>
+        <div id="message" role="status" aria-live="polite"></div>
+      </div>
+
+      <ul id="list"></ul>
+    </main>
+
+    <script src="ajax/ajax.js"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
