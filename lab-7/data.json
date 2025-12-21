@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "T-shirt Basic Cotton",
+    "price": 89.0,
+    "image": "images/tshirt.webp",
+    "promo": "Nowość",
+    "colors": ["#000", "#fff", "#64748b"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 2,
+    "name": "Jeansy Slim Fit",
+    "price": 199.0,
+    "image": "images/jeans.webp",
+    "colors": ["#000", "#1e3a8a"],
+    "sizes": ["30", "32", "34"]
+  },
+  {
+    "id": 3,
+    "name": "Kurtka Zimowa Parka",
+    "price": 319.0,
+    "originalPrice": 399.0,
+    "promo": "-20%",
+    "image": "images/puffer.jpg",
+    "colors": ["#000000", "#78350f"],
+    "sizes": ["M", "L"]
+  },
+  {
+    "id": 4,
+    "name": "Bluza Boxy",
+    "price": 149.0,
+    "image": "images/hoodie.jpg",
+    "colors": ["#b8b7b2", "#063767", "#000000"],
+    "sizes": ["XS", "S", "M"]
+  },
+  {
+    "id": 5,
+    "name": "Koszula Lniana",
+    "price": 129.0,
+    "image": "images/shirt.jpg",
+    "colors": ["#bed8db", "#f1f5f9"],
+    "sizes": ["38", "40", "42"]
+  },
+  {
+    "id": 6,
+    "name": "Szorty Cargo",
+    "price": 79.0,
+    "promo": "Ostatnie Sztuki",
+    "image": "images/shorts.webp",
+    "colors": ["#57534e", "#a8a29e"],
+    "sizes": ["M", "L", "XL"]
+  }
+]

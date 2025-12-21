@@ -3,17 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 7 - Karta Produktu</title>
-    <script src="components/colors.js"></script>
-    <script src="components/sizes.js"></script>
-    <script src="components/product-card.js"></script>
+    <title>Lab 7 - Sklep Online</title>
+    <script type="module" src="components/colors.js"></script>
+    <script type="module" src="components/sizes.js"></script>
+    <script type="module" src="components/product-card.js"></script>
+    <script type="module" src="components/shopping-cart.js"></script>
+    <script type="module" src="components/product-list.js"></script>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: system-ui, -apple-system, sans-serif;
         background-color: #f8fafc;
-        margin: 0;
-        padding: 2rem;
         color: #0f172a;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
       }
 
       h1 {
@@ -21,14 +33,20 @@
         margin-bottom: 3rem;
         font-weight: 800;
         color: #1e293b;
+        font-size: 2rem;
       }
 
-      .product-grid {
+      .shop-layout {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: 1fr 350px;
         gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+        align-items: start;
+      }
+
+      @media (max-width: 1024px) {
+        .shop-layout {
+          grid-template-columns: 1fr;
+        }
       }
 
       img {
@@ -38,70 +56,22 @@
     </style>
   </head>
   <body>
-    <h1>Nowa Kolekcja</h1>
+    <div class="container">
+      <h1>Nowa Kolekcja</h1>
 
-    <div class="product-grid">
-      <product-card>
-        <span slot="promo">Nowość</span>
-        <img slot="image" src="images/tshirt.webp" alt="T-shirt Basic" />
-        <h3 slot="name">T-shirt Basic Cotton</h3>
-        <span slot="price">89.00 PLN</span>
-        <product-colors
-          slot="colors"
-          items="#000, #fff, #64748b"
-        ></product-colors>
-        <product-sizes slot="sizes" items="S, M, L, XL"></product-sizes>
-      </product-card>
-
-      <product-card>
-        <img slot="image" src="images/jeans.webp" alt="Jeansy Slim" />
-        <h3 slot="name">Jeansy Slim Fit</h3>
-        <span slot="price">199.00 PLN</span>
-        <product-colors slot="colors" items="#000, #1e3a8a"></product-colors>
-        <product-sizes slot="sizes" items="30, 32, 34"></product-sizes>
-      </product-card>
-
-      <product-card>
-        <span slot="promo">-20%</span>
-        <img slot="image" src="images/puffer.jpg" alt="Kurtka Parka" />
-        <h3 slot="name">Kurtka Zimowa Parka</h3>
-        <span slot="price"
-          ><s style="color: #94a3b8; font-size: 0.9em; margin-right: 4px"
-            >399</s
-          >
-          319 PLN</span
-        >
-        <product-colors slot="colors" items="#000000, #78350f"></product-colors>
-        <product-sizes slot="sizes" items="M, L"></product-sizes>
-      </product-card>
-
-      <product-card>
-        <img slot="image" src="images/hoodie.jpg" alt="Bluza Hoodie" />
-        <h3 slot="name">Bluza Boxy</h3>
-        <span slot="price">149.00 PLN</span>
-        <product-colors
-          slot="colors"
-          items="#b8b7b2, #063767, #000000"
-        ></product-colors>
-        <product-sizes slot="sizes" items="XS, S, M"></product-sizes>
-      </product-card>
-
-      <product-card>
-        <img slot="image" src="images/shirt.jpg" alt="Koszula Lniana" />
-        <h3 slot="name">Koszula Lniana</h3>
-        <span slot="price">129.00 PLN</span>
-        <product-colors slot="colors" items="#bed8db, #f1f5f9"></product-colors>
-        <product-sizes slot="sizes" items="38, 40, 42"></product-sizes>
-      </product-card>
-
-      <product-card>
-        <span slot="promo">Ostatnie Sztuki</span>
-        <img slot="image" src="images/shorts.webp" alt="Szorty Cargo" />
-        <h3 slot="name">Szorty Cargo</h3>
-        <span slot="price">79.00 PLN</span>
-        <product-colors slot="colors" items="#57534e, #a8a29e"></product-colors>
-        <product-sizes slot="sizes" items="M, L, XL"></product-sizes>
-      </product-card>
+      <div class="shop-layout">
+        <product-list></product-list>
+        <shopping-cart></shopping-cart>
+      </div>
     </div>
+
+    <script type="module">
+      const productList = document.querySelector('product-list');
+      const cart = document.querySelector('shopping-cart');
+
+      document.addEventListener('add-to-cart', (event) => {
+        cart.addItem(event.detail);
+      });
+    </script>
   </body>
 </html>
