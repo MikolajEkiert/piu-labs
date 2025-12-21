@@ -35,14 +35,17 @@ class ProductList extends HTMLElement {
 
     async loadProducts() {
         try {
-            const response = await fetch('data.json');
+            const response = await fetch('./data.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const productsData = await response.json();
+            console.log('Załadowano produkty:', productsData);
             this.render(productsData);
         } catch (error) {
             console.error('Błąd ładowania produktów:', error);
             const grid = this.shadowRoot.querySelector('.product-grid');
-            grid.innerHTML =
-                '<div class="loading">Błąd ładowania produktów</div>';
+            grid.innerHTML = `<div class="loading">Błąd ładowania produktów: ${error.message}</div>`;
         }
     }
 
